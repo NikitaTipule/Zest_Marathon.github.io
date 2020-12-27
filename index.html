@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<title>Zest-Virtual Marathon</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* #sidebar {
+  display: none;
+} */
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+@media only screen and (max-width: 600px) {
+    * {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+  font-family:sans-serif;
+}
+
+#sidebar {
+  /* display: contents; */
+  position:absolute;
+  top:0px;
+  left:-200px;
+  width:200px;
+  height:100%;
+
+  background:#151719;
+  transition:all 300ms linear;
+}
+#sidebar.active {
+  left:0px;
+}
+#sidebar .toggle-btn {
+  position:absolute;
+  left:220px;
+  top:10px;
+}
+#sidebar .toggle-btn span {
+  display:block;
+  width:30px;
+  height:5px;
+  background:#151719;
+  margin:5px 0px;
+  cursor:pointer;
+}
+#sidebar div.list div.item {
+  padding:15px 10px;
+  border-bottom:1px solid #444;
+  color:#fcfcfc;
+  text-transform:uppercase;
+  font-size:15px;
+}
+
+#sidebar .toggle-btn span{
+  background-color: white;
+  /* position: fixed; /* Set the navbar to fixed position */
+  /* top: 30; */
+}
+
+}
+
+</style>
+
+
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="./zestlogowhite.png" style="width:100%; height:10%; padding-top:5px;padding-bottom:5px;margin-top:20px; margin-bottom:20px">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-info-circle w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#categories" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>CATEGORIES-FEES</p>
+  </a>
+  <a href="https://www.townscript.com/e/virtual-marathon-412100" target="_black" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-registered" style="font-size:48px;color:white"></i>
+    <p>Register</p>
+  </a>
+  <a href="http://coepzest.org/contact1.html" target="_black" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<!-- <div class="w3-top w3-hide-large w3-hide-medium"> -->
+  <div class="w3-hide-large w3-hide-medium" style="float: right; background-color: black;"><img src="./zestlogowhite.png" style="width:100%; height:10%; padding-top:5px;padding-bottom:5px;margin-top:5px; margin-bottom:20px; float: right; background-attachment: fixed; background-color: black;"></div>  
+    <div id="sidebar" class="w3-top w3-hide-large w3-hide-medium">
+        <div class="toggle-btn" style="margin-left: 20px; margin-top: 5px;" onclick="toggleSidebar(this)">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="list">
+
+            <div class="item" onclick="toggleSidebar(this)">  
+              <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+              <p>HOME</p>
+            </a></div>
+
+          <div class="item" onclick="toggleSidebar(this)">  
+            <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <p>ABOUT</p>
+          </a></div>
+          <div class="item" onclick="toggleSidebar(this)">  
+            <a href="#categories" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <p>CATEGORIES-FEES</p>
+          </a></div>
+          <div class="item">  
+            <a href="https://www.townscript.com/e/virtual-marathon-412100" target="_black" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <p>Register</p>
+          </a></div>
+          <div class="item">  
+            <a href="http://coepzest.org/contact1.html" target="_black" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <p>CONTACT</p>
+          </a></div>
+        </div>
+      </div>
+<!-- </div> -->
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+
+<!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo w3-hide-small"><span class="w3-hide-small">GET BACK ON TRACK</span></h1>
+    <p>COEP Zest'21 presents- Virtual Marathon</p>
+    <img src="./image2.png" alt="boy" class="w3-image" width="1000" height="1108" style="padding-top: 20px">
+  </header>
+
+<!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h1 class="w3-text-light-grey">About</h1>
+    <hr style="width:200px" class="w3-opacity">
+    <p>After more than nine months of widespread pandemic, world is still trying to do away with CORONA. The best way to deal with corona is always staying fit. Every country is trying to make their citizens healthy with various approaches.</p>
+    <p>And COEP Zest too....</p>
+    <p>For all the runners out there, ZEST'21 has organized the first ever _Virtual MARATHON</p><br>
+    <p><span class="iconify" data-icon="gg:edit-black-point" data-inline="false"></span>PLATFORM:</p>
+    <p>&emsp;&emsp;<span class="iconify" data-icon="simple-icons:strava" data-inline="false"></span>&emsp;Strava App</p><br>
+    <p><span class="iconify" data-icon="gg:edit-black-point" data-inline="false"></span>Dates:</p>
+    <p>&emsp;&emsp;<span class="iconify" data-icon="clarity:date-line" data-inline="false"></span>&emsp;24 January, 2021</p>
+    <p>&emsp;&emsp;<span class="iconify" data-icon="clarity:date-line" data-inline="false"></span>&emsp;25 January, 2021</p>
+    <p>&emsp;&emsp;<span class="iconify" data-icon="clarity:date-line" data-inline="false"></span>&emsp;26 January, 2021</p><br>
+    <p><span class="iconify" data-icon="gg:edit-black-point" data-inline="false"></span>Last Date for Registration:</p>
+    <p>&emsp;&emsp;<span class="iconify" data-icon="clarity:date-line" data-inline="false"></span>&emsp;22 January, 2021</p><br><br>
+    <!-- Preks -->
+        <h3 class="w3-padding-16 w3-text-grey" style="padding-top:20px">Perks</h3>
+        <div class="w3-row-padding" style="margin:0 -16px; width: 100%">
+          <div class="w3-half w3-margin-bottom">
+            <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
+              <li class="w3-dark-grey w3-xlarge w3-padding-32">Perks</li>
+              <li class="w3-padding-16">Cash Prizes</li>
+              <li class="w3-padding-16">E-certificates</li>
+              <li class="w3-padding-16">Goodies</li>
+              <li class="w3-padding-16">Special prizes for handicapped people</li>
+              <li class="w3-padding-16">Digital Frame for 10KM and 20KM Winners</li>
+            </ul>
+          </div>
+        </div>
+  </div>
+
+<!-- Categories -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="categories" style="padding-top: 30px" id="about">
+    <h1 class="w3-padding-16 w3-text-light-grey">Categories-Fees</h1>
+    <hr style="width:200px" class="w3-opacity">
+    <p class="w3-wide">3KM fun race: Rs. 30/-</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:30%"></div>
+    </div>
+    <p class="w3-wide">5KM race: Rs. 50/-</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:50%"></div>
+    </div>
+    <p class="w3-wide">10KM race: Rs. 75/-</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="w3-wide">20KM race: Rs. 100/-</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:100%"></div>
+    </div><br>
+
+    <a href="https://drive.google.com/file/d/1bIedtgGnTuPIMDVI8qo2N9eUfOGSGzbl/view" >
+      <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-download"></i> Download Information Brochure
+      </button>
+    </a>
+  <div style="padding-top: 70px; padding-bottom: 90px">
+    <img src="./image3.jpeg" alt="boy" class="w3-image" width="1000" height="1108" style="padding-top: 20px">
+  </div>
+<!-- Footer -->
+<div style="justify-content: center; align-items: center; display: flex">
+  <footer class="w3-content w3-text-grey w3-xlarge">
+    <a href="https://www.facebook.com/coepzest/"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>&emsp;
+    <a href="https://www.instagram.com/coepzest/?hl=en"><i class="fa fa-instagram w3-hover-opacity"></i></a>&emsp;
+    <a href="https://twitter.com/zestcoep?lang=en"><i class="fa fa-twitter w3-hover-opacity"></i></a>&emsp;
+    <a href="https://www.linkedin.com/in/zest-coep-483627165/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+    <p style="font-size: 17px">Made by COEP Zest'21</p>
+  </footer>
+</div>
+
+</div>
+
+</body>
+
+<script>
+    function toggleSidebar(ref){
+  document.getElementById("sidebar").classList.toggle('active');
+  document.getElementsByTagName("body").display("none");
+}
+ 
+</script>
+</html>
